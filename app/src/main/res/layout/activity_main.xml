@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GAME OVER"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Контейнер для GLSurfaceView -->
+    <FrameLayout
+        android:id="@+id/surfaceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <echo.driver.testgameopengl.JoystickView
+        android:id="@+id/joystick"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="health: 100"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceContainer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/attackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attack"
+        app:layout_constraintBottom_toTopOf="@+id/health"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
